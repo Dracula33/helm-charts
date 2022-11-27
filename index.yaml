@@ -3,7 +3,17 @@ entries:
   kub-test-app:
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-11-27T09:48:25.339543651Z"
+    created: "2022-11-27T11:54:21.417672315Z"
+    description: A Helm chart with Netology demo app for Kubernetes
+    digest: 60b8c03c4231ca8cf95d249ba4f339e91c930c97fc73770708c6182bc3afce5b
+    name: kub-test-app
+    type: application
+    urls:
+    - https://dracula33.github.io/helm-charts/kub-test-app-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-11-27T11:54:21.417368946Z"
     description: A Helm chart with Netology demo app for Kubernetes
     digest: c7daa66b0caf3061e3d5fa727087398c77797a262aff0522a272a30b2f87e0ef
     name: kub-test-app
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://dracula33.github.io/helm-charts/kub-test-app-0.1.0.tgz
     version: 0.1.0
-generated: "2022-11-27T09:48:25.338956214Z"
+generated: "2022-11-27T11:54:21.416789301Z"
