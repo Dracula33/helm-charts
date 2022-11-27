@@ -1,0 +1,5 @@
+-----------------------------------
+| Test Application for Kubernetes |
+-----------------------------------
+|      chart:{{ .Chart.Version }};  app:{{ .Chart.AppVersion }}    |
+-----------------------------------

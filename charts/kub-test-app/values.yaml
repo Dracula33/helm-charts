@@ -1,0 +1,22 @@
+
+external_ip: 127.0.0.1
+
+database_replicas: 1
+
+deployments:
+  frontend:
+    replicas: 1
+    image: frontend_hw
+    tag: 0.1
+    nodePort: 30000
+    env:
+    - name: BASE_URL
+      value: http://{{ tupl .Values.external_ip . }}:{{ tupl .Values.deployments.backend.nodePort . }}
+  backend:
+    replicas: 2
+    image: backend_hw
+    tag: 0.1
+    nodePort: 30001
+    env:
+    - name: DATABASE_URL
+      value: postgres://postgres:postgres@database:5432/postgres

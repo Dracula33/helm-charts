@@ -1,0 +1,24 @@
+{{ range $name,$val := .Values.deployments }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $name }}
+  labels:
+    app: {{ $name }}
+spec:
+  replicas: {{ $val.replicas }}
+  selector:
+    matchLabels:
+      app: {{ $name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $name }}
+    spec:
+      containers:
+        - image: {{ $val.image }}:{{ $val.tag | default "latest" }}
+          name: {{ $name }}
+          {{ if $val.env }}env:{{- toYaml $val.env | nindent 10 }}{{ end }}
+          imagePullPolicy: IfNotPresent
+{{ end }}
